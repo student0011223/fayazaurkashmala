@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Kangarooo ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page2">
+
+    <div class="vintage-box">
+        <h2 class="vintage-title">To My Kangarooo</h2>
+
+        <p class="vintage-text" id="typewriter">
+            umm i dont know what to say yr
+            <br>
+            I know I’m not perfect.
+            I know I mess up, 
+            and I know I don’t always say the right things.
+            But the one thing that has always been clear inside me is this 
+            my heart has been yours long before I even understood it.
+            <br>
+            In all the time we’ve spent together,
+            I learned something I never really understood before 
+            you’re not special to me just because you’re with me in my good moments…
+            you’re special because you stay even when I can’t stay with myself.
+            You stand by me in ways I never expected from anyone.
+            You see me, the real me,  and still choose me.
+            <br>
+            And that… that touches me in a way I can’t explain.
+            <br>
+            It’s not the big gestures, not the fancy things,
+            it’s the small things you do without even realizing 
+            the tiny care, the stupid jokes,
+            the way you talk, the way you fight, the way you love.
+            Those little things… they hit deeper than anything else ever has.
+            <br>
+            aur kashoo ❤️, you do so much bakchodiiii
+            but wallahi, that’s what I love the most.
+            Because that’s the side of you that only comes out
+            when you feel safe…
+            when you feel comfortable…
+            when you feel mine in a way that nobody else gets to see.
+            <br>
+            You have no idea how much that means to me.
+            How much you mean to me.
+            <br>
+            You matter to me more than you think,
+            more than you feel,
+            and more than I will ever be able to put into words.
+            And maybe I’ll never say it perfectly…
+            but in my heart, there’s a place that only belongs to you.
+            <br>
+            Darlinggggg, you’re not "someone" in my life.
+            You are the part of my life that makes everything else make sense.
+            And I pray Allah always keeps you protected, peaceful,
+            and close to me, in this life and whatever comes after.
+        </p>
+
+        <p class="vintage-text" id="typewriter2" style="margin-top:20px;"></p>
+        <p class="vintage-text" id="typewriter3" style="margin-top:10px;"></p>
+
+        <a href="heart.html" class="btn" id="nextBtn" style="display:none; margin-top:20px;">Continue →</a>
+
+    </div>
+
+    <script>
+        const mainText = document.getElementById("typewriter");
+        const secondText = document.getElementById("typewriter2");
+        const thirdText = document.getElementById("typewriter3");
+        const btn = document.getElementById("nextBtn");
+
+        let fullText = mainText.innerHTML.replace(/<br\s*\/?>/gi, "\n");
+        mainText.textContent = "";
+        secondText.textContent = "";
+        thirdText.textContent = "";
+
+        let index = 0;
+
+        function typeWriterMain() {
+            if(index < fullText.length){
+                mainText.textContent += fullText.charAt(index);
+                index++;
+                setTimeout(typeWriterMain, 10);
+            } else {
+                setTimeout(typeWriterSecond, 50);
+            }
+        }
+
+        function typeWriterSecond() {
+            let text2 = "I love youuuu for the sake of Allah ❤️❤️";
+            let i2 = 0;
+
+            function type2() {
+                if(i2 < text2.length){
+                    secondText.textContent += text2.charAt(i2);
+                    i2++;
+                    setTimeout(type2, 50);
+                } else {
+                    setTimeout(typeWriterThird, 300);
+                }
+            }
+            type2();
+        }
+
+        function typeWriterThird() {
+            let text3 = "from Flamingo";
+            let i3 = 0;
+
+            function type3() {
+                if(i3 < text3.length){
+                    thirdText.textContent += text3.charAt(i3);
+                    i3++;
+                    setTimeout(type3, 50);
+                } else {
+                    btn.style.display = "inline-block";
+                }
+            }
+            type3();
+        }
+
+        window.onload = typeWriterMain;
+    </script>
+
+</body>
+</html>

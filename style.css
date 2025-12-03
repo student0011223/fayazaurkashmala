@@ -1,0 +1,97 @@
+body, h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.center-box {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page1 {
+    background: linear-gradient(135deg, #ff9acb, #ffc1e3);
+    text-align: center;
+    padding: 20px;
+}
+
+.title1 {
+    font-size: 40px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #ff4fa5;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+#typewriter {
+    white-space: pre-line; 
+    font-size: 18px;
+    line-height: 1.6;
+}
+#typewriter {
+    border-right: 2px solid #5a3b24;
+    padding-right: 5px;
+    animation: blink 0.6s infinite;
+}
+
+.page2 {
+    background: #f0d091;
+    /* background-image: url(bg.jpg);    */
+    background-position: center;
+    padding: 20px;
+}
+
+.vintage-box {
+    background: transparent;
+    padding: 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    margin-top: 40px;
+}
+
+.vintage-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #553020;
+    font-weight: bold;
+}
+
+.vintage-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #5a3b24;
+    background: transparent;
+}
+
+@media(max-width: 480px){
+    .title1 {
+        font-size: 32px;
+    }
+    .vintage-box {
+        margin-top: 20px;
+    }
+    .vintage-title {
+        font-size: 22px;
+    }
+    .vintage-text {
+        font-size: 16px;
+    }
+}
