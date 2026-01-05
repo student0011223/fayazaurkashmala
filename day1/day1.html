@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Day one ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        overflow-x: hidden; /* IMPORTANT */
+        font-family: 'Georgia', serif;
+    }
+
+    .paper {
+        width: 100vw;              /* exact mobile width */
+        height: 100vh;             /* full screen */
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;  /* FIX */
+        background-position: top center;
+        padding: 80px 24px 40px 24px;
+    }
+
+    .text {
+        font-size: 16px;
+        color: #3b2b1c;
+        line-height: 30px;         /* match paper lines */
+        white-space: pre-wrap;
+
+        background-image: linear-gradient(
+            transparent,
+            transparent 29px,
+            rgba(0,0,0,0.12) 30px
+        );
+        background-size: 100% 30px;
+    }
+/* Next Button */
+.next-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(139, 69, 19, 0.9);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 14px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+    @media (max-width: 360px) {
+        .paper {
+            padding: 70px 18px 30px 18px;
+        }
+
+        .text {
+            font-size: 15px;
+            line-height: 28px;
+            background-size: 100% 28px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="paper">
+    <div class="text">
+Dear Maalkin,
+
+You are the chapter of my life,
+that i never want to end.
+i want to spend the whole 2026 with you,
+and not just 2026 but my whole life,
+
+even the bad days uu make them soo good
+that they bacome memorable
+im proud of you working for yourself
+you are a good teacher, teaching is not easy
+and you not only teach kids at school,
+i have learn so many good things from you
+you have made me better a person
+
+    </div>
+</div>
+<button class="next-btn" onclick="nextPage()">Next Page ➜</button>
+
+<script>
+function nextPage() {
+    window.location.href = "day1next.html";
+}
+</script>
+</body>
+</html>
