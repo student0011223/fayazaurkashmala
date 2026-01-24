@@ -1,20 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Kangarooo ❤️</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Messed Up</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Sorry rain */
+.sorry {
+    position: fixed;
+    top: -50px;
+    color: rgba(255,255,255,0.3);
+    white-space: nowrap;
+    animation: fall linear forwards;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+@keyframes fall {
+    from { transform: translateY(-60px); }
+    to { transform: translateY(110vh); }
+}
+
+/* Center box */
+.message-box {
+    position: relative;
+    background: rgba(0,0,0,0.8);
+    padding: 20px 16px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,0,0,0.5);
+    color: white;
+    width: 90%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.message-box h1 {
+    color: #ff4d4d;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.message-box p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.forgive { background: #ff4d4d; color: #fff; }
+.share { background: #25D366; color: #fff; }
+
+/* Hearts */
+.heart {
+    position: fixed;
+    font-size: 24px;
+    animation: floatUp 2s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0) scale(1); opacity: 1; }
+    to { transform: translateY(-120px) scale(1.6); opacity: 0; }
+}
+
+/* Small screens */
+@media (max-width: 350px) {
+    .message-box h1 { font-size: 20px; }
+    .message-box p { font-size: 14px; }
+    .btn { font-size: 14px; padding: 10px; }
+}
+</style>
 </head>
 
-<body class="page1">
+<body>
 
-    <div class="center-box">
-        <h1 class="title1">hi kashoooooo</h1>
+<div class="message-box">
+    <h1>I Messed Up</h1>
+    <p>
+        I made a mistake.  
+        im Sorryyyyy Malkinnnn 
+        
+    </p>
 
-        <a href="letter.html" class="btn">Continue →</a>
-    </div>
+    <button class="btn forgive" onclick="forgiveMe()">Maaf Kardiya ❤️</button>
+    <button class="btn share" onclick="shareWhatsApp()">WhatsApp Pe Bhejo 💬</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    function createSorry() {
+        for (let i = 0; i < 5; i++) {
+            const s = document.createElement("div");
+            s.className = "sorry";
+            s.innerText = "SORRY";
+            s.style.left = Math.random() * 100 + "vw";
+            s.style.fontSize = (18 + Math.random() * 22) + "px";
+            s.style.animationDuration = (7 + Math.random() * 4) + "s";
+            document.body.appendChild(s);
+
+            setTimeout(() => s.remove(), 12000);
+        }
+    }
+
+    setInterval(createSorry, 220);
+});
+
+function forgiveMe() {
+    for (let i = 0; i < 12; i++) {
+        const h = document.createElement("div");
+        h.className = "heart";
+        h.innerText = "❤️";
+        h.style.left = (50 + (Math.random()*40 - 20)) + "%";
+        h.style.top = "55%";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 2000);
+    }
+}
+
+function shareWhatsApp() {
+    const msg = encodeURIComponent(
+        "Maaf kiya ❤️"
+    );
+     window.location.href = "https://wa.me/923249219724?text=" + msg;
+}
+</script>
 
 </body>
 </html>
